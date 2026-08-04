@@ -1,0 +1,11 @@
+<?php
+// ARCHIVO SINTETICO DE MARCADOR DE POSICION
+//
+// En un kit real, este archivo leeria $_POST, armaria el mensaje con
+// las credenciales capturadas y lo enviaria al destino definido en
+// config.php (por email, Telegram, Discord, o un panel propio). Aqui
+// NO se implementa ninguna logica real a proposito.
+// campos_ficticios_esperados: email, password, otp
+// kit build: nimbus_dev v3
+?>
+// [marcador simulado, NO funcional] blob_ofuscado = "ZXN0byBlcyB1biBlamVtcGxvIHNpbnRldGljbywgbm8gZXMgY29kaWdvIGZ1bmNpb25hbA=="

@@ -1,0 +1,5 @@
+# ARCHIVO SINTETICO DE MARCADOR DE POSICION -- no es una configuracion activa.
+#
+# Los kits reales a veces anaden reglas .htaccess para bloquear ciertos
+# user-agents o rangos de IP conocidos. Aqui no se define ninguna regla
+# real; el archivo existe solo para dar una estructura de kit realista.

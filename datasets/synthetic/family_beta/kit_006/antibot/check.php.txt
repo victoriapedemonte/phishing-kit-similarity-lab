@@ -1,0 +1,9 @@
+<?php
+// ARCHIVO SINTETICO DE MARCADOR DE POSICION
+//
+// Los kits de phishing a veces incluyen una capa que
+// filtra visitantes antes de mostrar la pagina falsa (por ejemplo,
+// bloqueando IPs o user-agents conocidos de escaneres de seguridad y
+// crawlers de listas de bloqueo), para dificultar que se los detecte
+// y se les de baja rapido.
+?>

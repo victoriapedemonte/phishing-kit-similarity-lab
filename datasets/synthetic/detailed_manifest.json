@@ -1,0 +1,775 @@
+{
+  "family_alpha/kit_000": {
+    "intensity": "none",
+    "operators": []
+  },
+  "family_alpha/kit_001": {
+    "rng_seed": 49435339,
+    "intensity": "light",
+    "num_operators_applied": 1,
+    "operators": [
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      }
+    ]
+  },
+  "family_alpha/kit_002": {
+    "rng_seed": 1188567732,
+    "intensity": "medium",
+    "num_operators_applied": 6,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": true
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "keep"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Iniciar sesión ahora",
+          "Contraseña -> Password",
+          "Código de verificación -> Código de un solo uso",
+          "Recordarme -> Mantener la sesión iniciada"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Zephyr Mail"
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      }
+    ]
+  },
+  "family_alpha/kit_003": {
+    "rng_seed": 477464411,
+    "intensity": "medium",
+    "num_operators_applied": 5,
+    "operators": [
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "5892"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Acceder",
+          "Código de verificación -> Código OTP"
+        ]
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": true
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "double_to_single"
+      }
+    ]
+  },
+  "family_alpha/kit_004": {
+    "rng_seed": 3216741116,
+    "intensity": "heavy",
+    "num_operators_applied": 9,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": true
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "6243"
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "strip"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Acceder",
+          "Correo electrónico -> Dirección de correo",
+          "Contraseña -> Password"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Skylark Cloud"
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": false
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "double_to_single"
+      }
+    ]
+  },
+  "family_alpha/kit_005": {
+    "rng_seed": 2571481068,
+    "intensity": "light",
+    "num_operators_applied": 1,
+    "operators": [
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      }
+    ]
+  },
+  "family_alpha/kit_006": {
+    "rng_seed": 1848647746,
+    "intensity": "medium",
+    "num_operators_applied": 5,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": false
+      },
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          2,
+          1,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0
+        ]
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "2816"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "userEmail": "iris48",
+          "userPassword": "ember48",
+          "otpField": "ember81",
+          "login-card": "ember77"
+        }
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      }
+    ]
+  },
+  "family_beta/kit_000": {
+    "intensity": "none",
+    "operators": []
+  },
+  "family_beta/kit_001": {
+    "rng_seed": 973641202,
+    "intensity": "light",
+    "num_operators_applied": 1,
+    "operators": [
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Havenwell Bank"
+      }
+    ]
+  },
+  "family_beta/kit_002": {
+    "rng_seed": 1729678438,
+    "intensity": "medium",
+    "num_operators_applied": 5,
+    "operators": [
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          0,
+          4,
+          1,
+          2,
+          7,
+          3,
+          6,
+          5
+        ]
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "strip"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Correo electrónico -> Email"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Union Ridge Bank"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "single_to_double"
+      }
+    ]
+  },
+  "family_beta/kit_003": {
+    "rng_seed": 3951520494,
+    "intensity": "medium",
+    "num_operators_applied": 4,
+    "operators": [
+      {
+        "operator": "mutate_signature",
+        "action": "strip"
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Meridian Trust"
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": false
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      }
+    ]
+  },
+  "family_beta/kit_004": {
+    "rng_seed": 2254716792,
+    "intensity": "heavy",
+    "num_operators_applied": 9,
+    "operators": [
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          6,
+          5,
+          7,
+          4,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "1643"
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "replace"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Correo electrónico -> Dirección de correo"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Meridian Trust"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "cardNumber": "quill38",
+          "bank-title": "onyx75",
+          "support-line": "cobalt72",
+          "submitBtn": "atlas58",
+          "userEmail": "birch50"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": false
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "double_to_single"
+      }
+    ]
+  },
+  "family_beta/kit_005": {
+    "rng_seed": 234389519,
+    "intensity": "light",
+    "num_operators_applied": 1,
+    "operators": [
+      {
+        "operator": "inject_junk_comments"
+      }
+    ]
+  },
+  "family_beta/kit_006": {
+    "rng_seed": 3448179537,
+    "intensity": "medium",
+    "num_operators_applied": 5,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": true
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "keep"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "loginForm": "cobalt66",
+          "userEmail": "ember72",
+          "bank-title": "cobalt25",
+          "auth-panel": "delta65"
+        }
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "compact"
+      }
+    ]
+  },
+  "family_gamma/kit_000": {
+    "intensity": "none",
+    "operators": []
+  },
+  "family_gamma/kit_001": {
+    "rng_seed": 3387374924,
+    "intensity": "heavy",
+    "num_operators_applied": 9,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": true
+      },
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          6,
+          0,
+          1,
+          5,
+          2,
+          3,
+          7,
+          4
+        ]
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "strip"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Acceder",
+          "Correo electrónico -> Dirección de correo",
+          "Contraseña -> Clave de acceso"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Zephyr Mail"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "loginForm": "birch41",
+          "help-text": "cobalt99",
+          "otpField": "flux54",
+          "submitBtn": "lynx41",
+          "login-card": "drift87",
+          "userPassword": "flux20",
+          "brand-title": "iris25"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": false
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "compact"
+      }
+    ]
+  },
+  "family_gamma/kit_002": {
+    "rng_seed": 3838947652,
+    "intensity": "heavy",
+    "num_operators_applied": 8,
+    "operators": [
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          4,
+          0,
+          1,
+          6,
+          3,
+          5,
+          7,
+          2
+        ]
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "1674"
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "replace"
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Skylark Cloud"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "userEmail": "flux75"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": true
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "single_to_double"
+      }
+    ]
+  },
+  "family_gamma/kit_003": {
+    "rng_seed": 3470552592,
+    "intensity": "heavy",
+    "num_operators_applied": 11,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": false
+      },
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          2,
+          7,
+          5,
+          1,
+          4,
+          3,
+          6,
+          0
+        ]
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "3775"
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "replace"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Entrar a tu cuenta",
+          "Contraseña -> Password",
+          "Código de verificación -> Código de un solo uso"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Skylark Cloud"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "userEmail": "lynx62",
+          "login-card": "atlas87",
+          "loginForm": "delta15",
+          "userPassword": "delta51"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": true
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "compact"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "double_to_single"
+      }
+    ]
+  },
+  "family_gamma/kit_004": {
+    "rng_seed": 1767491335,
+    "intensity": "heavy",
+    "num_operators_applied": 10,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": false
+      },
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          5,
+          3,
+          4,
+          0,
+          6,
+          7,
+          1,
+          2
+        ]
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "2531"
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "replace"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Entrar a tu cuenta",
+          "Correo electrónico -> Email",
+          "Contraseña -> Password"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Skylark Cloud"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "notice-banner": "drift12",
+          "brand-title": "delta2",
+          "userEmail": "onyx8",
+          "loginForm": "quill50",
+          "otpField": "cobalt35",
+          "userPassword": "flux46",
+          "help-text": "onyx70",
+          "submitBtn": "birch58"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": true
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "single_to_double"
+      }
+    ]
+  },
+  "family_gamma/kit_005": {
+    "rng_seed": 1461903334,
+    "intensity": "heavy",
+    "num_operators_applied": 10,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": false
+      },
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          5,
+          7,
+          0,
+          3,
+          2,
+          4,
+          1,
+          6
+        ]
+      },
+      {
+        "operator": "randomize_config_destination",
+        "applied": true,
+        "new_suffix": "8359"
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "keep"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Acceder"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Meridian Inbox"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "userPassword": "quill84",
+          "submitBtn": "haze34",
+          "help-text": "drift55",
+          "login-card": "drift86",
+          "notice-banner": "quokka70",
+          "otpField": "birch10",
+          "loginForm": "nova44",
+          "userEmail": "lynx49",
+          "brand-title": "birch35"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": true
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "compact"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "single_to_double"
+      }
+    ]
+  },
+  "family_gamma/kit_006": {
+    "rng_seed": 2472455869,
+    "intensity": "heavy",
+    "num_operators_applied": 10,
+    "operators": [
+      {
+        "operator": "add_optional_field",
+        "applied": false
+      },
+      {
+        "operator": "reorder_css_rules",
+        "applied": true,
+        "order": [
+          2,
+          3,
+          4,
+          6,
+          5,
+          0,
+          7,
+          1
+        ]
+      },
+      {
+        "operator": "mutate_signature",
+        "action": "keep"
+      },
+      {
+        "operator": "vary_visible_text",
+        "changes": [
+          "Iniciar sesión -> Iniciar sesión ahora",
+          "Correo electrónico -> Dirección de correo",
+          "Contraseña -> Password",
+          "Código de verificación -> Código OTP"
+        ]
+      },
+      {
+        "operator": "rebrand",
+        "applied": true,
+        "new_brand": "Skylark Cloud"
+      },
+      {
+        "operator": "rename_identifiers",
+        "mapping": {
+          "login-card": "flux52",
+          "help-text": "vela68",
+          "submitBtn": "quokka32",
+          "brand-title": "lynx63",
+          "userPassword": "atlas45",
+          "loginForm": "atlas28",
+          "userEmail": "delta99"
+        }
+      },
+      {
+        "operator": "inject_obfuscation_marker",
+        "applied": false
+      },
+      {
+        "operator": "inject_junk_comments"
+      },
+      {
+        "operator": "reformat_whitespace",
+        "mode": "loose"
+      },
+      {
+        "operator": "swap_quote_style",
+        "target": "double_to_single"
+      }
+    ]
+  }
+}

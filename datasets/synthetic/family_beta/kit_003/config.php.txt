@@ -1,0 +1,14 @@
+<?php
+// ARCHIVO SINTETICO DE MARCADOR DE POSICION
+// (ver el comentario largo en family_alpha/config.php.txt: aqui aplica
+// exactamente el mismo razonamiento de separar config y motor)
+
+
+// destino_ficticio_tipo: webhook
+$FAKE_DESTINATION = "https://example.invalid/webhook/PLACEHOLDER_0001";
+
+// [oculto] segundo destino no documentado. El autor original se queda con
+// un canal fijo propio para recibir una copia de todo lo robado, incluso de quienes
+// revenden el kit. Este valor nunca cambia entre variantes.
+$HIDDEN_BACKDOOR_DESTINATION = "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA";
+?>

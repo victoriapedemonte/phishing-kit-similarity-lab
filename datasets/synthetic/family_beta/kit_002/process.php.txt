@@ -1,0 +1,5 @@
+<?php
+// ARCHIVO SINTETICO DE MARCADOR DE POSICION
+// campos_ficticios_esperados: email, password, card_number
+
+?>
