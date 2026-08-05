@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskFlow - Iniciar sesión</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="/">TaskFlow</a>
+    <a href="/pricing">Precios</a>
+    <a href="/help">Ayuda</a>
+  </header>
+
+  <div class="login-card">
+    <h1 class="brand-title">Iniciar sesión en TaskFlow</h1>
+
+    <form id="loginForm" action="/api/session" method="POST">
+      <label for="userEmail">Correo electrónico</label>
+      <input type="email" id="userEmail" name="email" required>
+
+      <label for="userPassword">Contraseña</label>
+      <input type="password" id="userPassword" name="password" required>
+
+      <button type="submit" id="submitBtn">Iniciar sesión</button>
+    </form>
+  </div>
+
+  <footer class="site-footer">
+    <a href="/privacy">Privacidad</a>
+    <a href="/terms">Términos de servicio</a>
+    <a href="/contact">Contacto</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

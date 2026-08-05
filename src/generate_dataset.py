@@ -48,6 +48,7 @@ FAMILY_CONTEXT = {
 
 # family_gamma won't have its own seed, it will consist of mutated family_alpha kits with "heavy" intensity. 
 GAMMA_SOURCE_FAMILY = "family_alpha"
+IGNORED_FILENAMES = {".DS_Store", "Thumbs.db", "desktop.ini"}
 
 def deterministic_seed(*parts):
     """
@@ -64,6 +65,8 @@ def load_seed(family):
     files = {}
     for root, _dirs, filenames in os.walk(base):
         for fname in sorted(filenames):
+            if fname in IGNORED_FILENAMES:
+                continue
             full_path = os.path.join(root, fname)
             rel_path = os.path.relpath(full_path, base).replace(os.sep, "/")
             with open(full_path, "r", encoding="utf-8") as f:
@@ -81,7 +84,7 @@ def write_kit(family, kit_id, files):
 
 
 def generate_family(family, context, num_variants, ground_truth, detailed,
-                     source_family=None, intensity_plan=None):
+                     source_family=None, intensity_plan=None, is_malicious=True):
     seed_family = source_family or family
     seed_files = load_seed(seed_family)
     engine = MutationEngine(context)
@@ -92,6 +95,7 @@ def generate_family(family, context, num_variants, ground_truth, detailed,
         "kit_id": f"{family}/kit_000",
         "family": family,
         "origin_seed": seed_family,
+        "is_malicious": is_malicious,
         "rng_seed": "",
         "intensity": "none",
         "num_operators_applied": 0,
@@ -117,6 +121,7 @@ def generate_family(family, context, num_variants, ground_truth, detailed,
             "kit_id": f"{family}/{kit_id}",
             "family": family,
             "origin_seed": seed_family,
+            "is_malicious": is_malicious,
             "rng_seed": rng_seed,
             "intensity": intensity,
             "num_operators_applied": manifest["num_operators_applied"],
@@ -142,11 +147,13 @@ def main():
                      args.num_variants, ground_truth, detailed,
                      source_family=GAMMA_SOURCE_FAMILY,
                      intensity_plan=["heavy"] * args.num_variants)
+    generate_family("family_benign", {}, 0, ground_truth, detailed,
+                     is_malicious=False)
 
     gt_path = os.path.join(OUTPUT_DIR, "ground_truth.csv")
     with open(gt_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=[
-            "kit_id", "family", "origin_seed", "rng_seed",
+            "kit_id", "family", "origin_seed", "is_malicious", "rng_seed",
             "intensity", "num_operators_applied", "operators_applied",
         ])
         writer.writeheader()
@@ -156,7 +163,7 @@ def main():
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(detailed, f, indent=2, ensure_ascii=False)
 
-    print(f"Generados {len(ground_truth)} kits en total.")
+    print(f"Generated {len(ground_truth)} kits in total.")
     print(f"  -> {gt_path}")
     print(f"  -> {manifest_path}")
 

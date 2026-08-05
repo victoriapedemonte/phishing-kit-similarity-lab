@@ -771,5 +771,9 @@
         "target": "double_to_single"
       }
     ]
+  },
+  "family_benign/kit_000": {
+    "intensity": "none",
+    "operators": []
   }
 }

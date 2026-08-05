@@ -71,3 +71,25 @@ python3 generate_dataset.py --num-variants 6
 
 This (re)generates everything under `datasets/synthetic/<family>/`
 (deterministic: same command always produces byte-identical output).
+
+
+## Feature Extraction
+
+We turn each generated kit into a structured `features.json`
+fingerprint, using the same categories mapped in the table above:
+
+- **`src/feature_extraction/features.py`** — parses each kit
+  (BeautifulSoup for HTML, regex for the rest) and extracts 6 feature
+  groups: file manifest, form fields, exfiltration indicators
+  (including detecting a fixed/hidden destination alongside the
+  randomized one, a real backdoor pattern), obfuscation indicators,
+  evasion indicators, and branding/signature.
+- **`src/extract_features.py`** — runs the extractor over every kit in
+  `datasets/synthetic/` and writes `features.json` (nested, for code)
+  and `features_summary.csv` (flattened, for spreadsheets).
+
+```bash
+pip install -r requirements.txt
+cd src
+python3 extract_features.py
+```

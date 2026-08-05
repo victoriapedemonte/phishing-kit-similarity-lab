@@ -1,0 +1,1347 @@
+{
+  "family_alpha/kit_000": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "NimbusBox"
+    }
+  },
+  "family_alpha/kit_001": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "NimbusBox"
+    }
+  },
+  "family_alpha/kit_002": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 4,
+      "field_types": [
+        "checkbox",
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": true
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "Zephyr Mail"
+    }
+  },
+  "family_alpha/kit_003": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_5892",
+        "CHAT_ID_PLACEHOLDER_5892",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": true,
+      "longest_base64_run": 74,
+      "comment_density": 0.82
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "NimbusBox"
+    }
+  },
+  "family_alpha/kit_004": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 4,
+      "field_types": [
+        "checkbox",
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": true
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_6243",
+        "CHAT_ID_PLACEHOLDER_6243",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.78
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": null,
+      "brand_name_detected": "Skylark Cloud"
+    }
+  },
+  "family_alpha/kit_005": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "NimbusBox"
+    }
+  },
+  "family_alpha/kit_006": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_2816",
+        "CHAT_ID_PLACEHOLDER_2816",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "NimbusBox"
+    }
+  },
+  "family_benign/kit_000": {
+    "file_manifest": {
+      "files": [
+        "index.html",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 3,
+      "has_config_engine_split": false
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 2,
+      "field_types": [
+        "email",
+        "password"
+      ],
+      "field_names": [
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": null,
+      "is_external_action": false,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [],
+      "has_fixed_backdoor_pattern": false
+    },
+    "link_indicators": {
+      "num_links": 6,
+      "num_non_empty_links": 6,
+      "has_navigation_links": true
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.0
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": null,
+      "brand_name_detected": "TaskFlow"
+    }
+  },
+  "family_beta/kit_000": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.6
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": "northwind_pack v2",
+      "brand_name_detected": "Northwind Bank"
+    }
+  },
+  "family_beta/kit_001": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.6
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": "northwind_pack v2",
+      "brand_name_detected": "Havenwell Bank"
+    }
+  },
+  "family_beta/kit_002": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.5
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": null,
+      "brand_name_detected": "Union Ridge Bank"
+    }
+  },
+  "family_beta/kit_003": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.5
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": null,
+      "brand_name_detected": "Meridian Trust"
+    }
+  },
+  "family_beta/kit_004": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_1643",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.6
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": "repack_x",
+      "brand_name_detected": "Meridian Trust"
+    }
+  },
+  "family_beta/kit_005": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.6
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": "northwind_pack v2",
+      "brand_name_detected": "Northwind Bank"
+    }
+  },
+  "family_beta/kit_006": {
+    "file_manifest": {
+      "files": [
+        ".htaccess.txt",
+        "antibot/check.php.txt",
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 7,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 4,
+      "field_types": [
+        "checkbox",
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "card_number",
+        "email",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": false,
+      "has_card_field": true,
+      "has_hidden_fields": false,
+      "has_checkbox_field": true
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "https://example.invalid/webhook/PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_BETA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.6
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": true,
+      "has_htaccess": true
+    },
+    "branding_indicators": {
+      "kit_signature": "northwind_pack v2",
+      "brand_name_detected": "Northwind Bank"
+    }
+  },
+  "family_gamma/kit_000": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "NimbusBox"
+    }
+  },
+  "family_gamma/kit_001": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 4,
+      "field_types": [
+        "checkbox",
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": true
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.78
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": null,
+      "brand_name_detected": "Zephyr Mail"
+    }
+  },
+  "family_gamma/kit_002": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_1674",
+        "CHAT_ID_PLACEHOLDER_1674",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": true,
+      "longest_base64_run": 74,
+      "comment_density": 0.82
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "clean_build",
+      "brand_name_detected": "Skylark Cloud"
+    }
+  },
+  "family_gamma/kit_003": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_3775",
+        "CHAT_ID_PLACEHOLDER_3775",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": true,
+      "longest_base64_run": 74,
+      "comment_density": 0.82
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "resold_by_ghost",
+      "brand_name_detected": "Skylark Cloud"
+    }
+  },
+  "family_gamma/kit_004": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_2531",
+        "CHAT_ID_PLACEHOLDER_2531",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": true,
+      "longest_base64_run": 74,
+      "comment_density": 0.82
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "clean_build",
+      "brand_name_detected": "Skylark Cloud"
+    }
+  },
+  "family_gamma/kit_005": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_8359",
+        "CHAT_ID_PLACEHOLDER_8359",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": true,
+      "longest_base64_run": 74,
+      "comment_density": 0.82
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "Meridian Inbox"
+    }
+  },
+  "family_gamma/kit_006": {
+    "file_manifest": {
+      "files": [
+        "config.php.txt",
+        "index.html",
+        "process.php.txt",
+        "script.js",
+        "style.css"
+      ],
+      "num_files": 5,
+      "has_config_engine_split": true
+    },
+    "form_features": {
+      "num_forms": 1,
+      "num_inputs": 3,
+      "field_types": [
+        "email",
+        "password",
+        "text"
+      ],
+      "field_names": [
+        "email",
+        "otp",
+        "password"
+      ],
+      "has_password_field": true,
+      "has_otp_field": true,
+      "has_card_field": false,
+      "has_hidden_fields": false,
+      "has_checkbox_field": false
+    },
+    "exfil_indicators": {
+      "form_action_domain": "example.invalid",
+      "is_external_action": true,
+      "has_empty_or_blank_action": false,
+      "config_placeholder_values": [
+        "TELEGRAM_BOT_TOKEN_PLACEHOLDER_0001",
+        "CHAT_ID_PLACEHOLDER_0001",
+        "BACKDOOR_TELEGRAM_PLACEHOLDER_FIXED_ALPHA"
+      ],
+      "has_fixed_backdoor_pattern": true
+    },
+    "link_indicators": {
+      "num_links": 0,
+      "num_non_empty_links": 0,
+      "has_navigation_links": false
+    },
+    "obfuscation_indicators": {
+      "has_base64_blob": false,
+      "longest_base64_run": 0,
+      "comment_density": 0.8
+    },
+    "evasion_indicators": {
+      "has_antibot_folder": false,
+      "has_htaccess": false
+    },
+    "branding_indicators": {
+      "kit_signature": "nimbus_dev v3",
+      "brand_name_detected": "Skylark Cloud"
+    }
+  }
+}
