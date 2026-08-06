@@ -1,10 +1,9 @@
 # phishing-kit-similarity-lab
 
 A defensive-research project that studies how phishing kits
-reuse code, using **fully synthetic data**. It measures similarity
-between kit files (fuzzy hashing, structural features) and clusters
-them into families, mirroring how real threat-intel teams track kit
-reuse, resale, and attribution.
+reuse code. Given a captured kit, it tells you how similar it
+is to known kits, what family it likely belongs to, and whether
+it looks malicious at all.
 
 > **This repository contains no real phishing kits, stolen credentials,
 > live phishing URLs, or working credential-collection code.** All kits
@@ -13,9 +12,57 @@ reuse, resale, and attribution.
 > resolves. See [ETHICS.md](ETHICS.md).
 
 
+## What this is, and how it fits together
+
+This is a small pipeline: 
+
+| Script | Question it answers | Needs |
+|---|---|---|
+| `generate_dataset.py` | (demo data) build a labeled synthetic corpus | nothing |
+| `extract_features.py` | what does this kit's structure look like? | any kit files |
+| `compute_similarity.py` | how well does the method work? | a labeled corpus |
+| `analyze_kit.py` | **what is this one kit I just found?** | a labeled reference corpus |
+| `cluster_kits.py` | which of these many kits are copies of each other? | any batch, no labels needed |
+| `train_classifier.py` | train a fast, reusable classifier | a labeled corpus |
+
+`analyze_kit.py` is the actual entry point for the real use case
+(one new suspicious kit in, an answer out).
+
+## Quick use
+
+```bash
+pip install -r requirements.txt
+cd src
+
+python3 generate_dataset.py        # build the synthetic reference corpus
+python3 extract_features.py        # fingerprint every kit
+python3 compute_similarity.py      # validate: does similarity separate families?
+python3 cluster_kits.py            # discover structure
+python3 train_classifier.py        # train the reusable classifier
+python3 analyze_kit.py /path/to/a/suspicious/kit   # the real "what is this?" 
+```
+
+## Bringing your own data
+
+To add your own kits:
+
+1. Create `datasets/<your_source_name>/<family_name>/<kit_id>/` per
+   kit, with its files inside as plain text (see `ETHICS.md` for why
+   ours use a `.txt` suffix on anything that would normally be `.php`).
+2. Optional, but needed for `analyze_kit.py` / `train_classifier.py`
+   to use it as a reference: add
+   `datasets/<your_source_name>/ground_truth.csv` with columns
+   `kit_id, family, origin_seed, is_malicious`. Without it,
+   `extract_features.py` / `compute_similarity.py` still run fine —
+   you just lose the family/malicious validation reporting for that
+   source.
+3. Run `extract_features.py` and `compute_similarity.py` as usual —
+   they process every source under `datasets/`.
+
+
 ## Why the kits look the way they do
 
-Real phishing kits have a recognizable static "shape", the same way a
+Real phishing kits have a recognizable static shape, the same way a
 malware binary has sections, imports, and packer artifacts. Before
 generating data, this project maps that shape explicitly:
 
@@ -33,11 +80,9 @@ noise, but the same categories a real analyst would fingerprint.
 
 ## Synthetic Data Generation
 
-Instead of hand-writing kit variants one by one, a small **mutation
-engine** (`src/mutation_engine/`) takes one seed kit per family and
-applies a random-but-reproducible combination of 11 transformations
-(renaming, reformatting, reordering, rebranding, signature mutation,
-obfuscation markers...) to generate realistic variants.
+We use a small **mutation engine** (`src/mutation_engine/`) that takes
+one seed kit per family and applies a random-but-reproducible combination 
+of 11 transformations to generate realistic variants.
 
 Three families are generated:
 
@@ -47,23 +92,10 @@ Three families are generated:
 | `family_beta`  | fake bank login (Northwind Bank), **has** `antibot/` + `.htaccess` | a more "sophisticated" kit — unrelated to alpha |
 | `family_gamma` | **derived from `family_alpha`** at high mutation intensity | a heavily modified copy — tests whether similarity detection can still trace it back to alpha |
 
-Two design choices worth calling out:
-
-- **Config vs. engine split**: `config.php.txt` (the fake exfil
-  destination) and `process.php.txt` (the validation "engine") are
-  separate files, because in real kits the config is what changes
-  between resold copies while the engine stays nearly identical.
-- **`rebrand`**: swaps the visible brand name for a different
-  fictional one while keeping the underlying form/JS/CSS structure.
-  This is the key test case for the whole project: visual/brand
-  matching would call these "different sites," but code-similarity
-  should still see them as close relatives.
-
 Every generated kit is tracked in `datasets/synthetic/ground_truth.csv`
 and `detailed_manifest.json`, so later phases can be objectively scored.
 
 ```bash
-cd src
 python3 generate_dataset.py --num-variants 6
 ```
 
@@ -77,43 +109,48 @@ We turn each generated kit into a structured `features.json`
 fingerprint, using the same categories mapped in the table above:
 
 - **`src/feature_extraction/features.py`**: parses each kit
-  (BeautifulSoup for HTML, regex for the rest) and extracts 6 feature
-  groups: file manifest, form fields, exfiltration indicators
-  (including detecting a fixed/hidden destination alongside the
-  randomized one, a real backdoor pattern), obfuscation indicators,
-  evasion indicators, and branding/signature.
-- **`src/extract_features.py`**: runs the extractor over every kit in
-  `datasets/synthetic/` and writes `features.json` (nested, for code)
-  and `features_summary.csv` (flattened, for spreadsheets).
+  and extracts 7 feature groups: file manifest, form fields, 
+  exfiltration indicators, link/navigation richness, obfuscation 
+  indicators, evasion indicators, and branding/signature.
+- **`src/extract_features.py`**: runs the extractor over every source
+  under `datasets/` and writes `features.json` and `features_summary.csv`.
 
 ```bash
-pip install -r requirements.txt
-cd src
 python3 extract_features.py
 ```
 
 ## Similarity & Querying
 
-Two complementary tools:
-
-- **`src/compute_similarity.py`**: builds/validates the reference
-  corpus: computes pairwise similarity between every kit in
-  `datasets/`, combining an ensemble of ssdeep + TLSH + a
-  dependency-free shingling method (code-level) with the previous
-  feature similarity (semantic-level). Writes `similarity_matrix.csv`
-  and, when ground truth is available, reports how well the combined
-  score separates same-family from unrelated pairs.
-- **`src/analyze_kit.py`**: the actual entry point for analyzing a
-  new, unlabeled kit: takes any folder on disk, compares it against
-  the labeled reference corpus, and reports its nearest neighbors,
-  most likely family, and a malicious/benign verdict.
+- **`src/compute_similarity.py`**: validates the reference corpus:
+  computes pairwise similarity between every kit, combining an
+  ssdeep + TLSH + a dependency-free shingling method (code-level)
+  with feature similarity (semantic-level). Writes `similarity_matrix.csv`
+  and, when ground truth is available, reports how well the score separates same-family from unrelated pairs.
+- **`src/analyze_kit.py`**: analyzes one new, unlabeled kit against the
+  labeled reference corpus: nearest neighbors, most likely family, a
+  malicious/benign verdict, and a checklist of which specific indicators 
+  were detected.
 
 ```bash
-pip install -r requirements.txt   # macOS: brew install ssdeep first
-cd src
-python3 compute_similarity.py            # validates the corpus
-python3 analyze_kit.py /path/to/a/kit    # analyzes one new kit
+python3 compute_similarity.py
+python3 analyze_kit.py /path/to/a/kit
 ```
-**A note on the verdict:** it's nearest-neighbor based, not a trained
-classifier, and only as good as the reference corpus. 
+**A note on the verdict:** it's nearest-neighbor based by default, only
+as good as the reference corpus, and only supplemented (not replaced)
+by the trained classifier below if one exists.
 
+
+## Clustering & a Trainable Classifier
+
+- **`src/cluster_kits.py`**: given a *batch* of kits with no prior
+  labels, groups them with DBSCAN over a precomputed distance matrix.
+  Answers "which of these are copies of each other?".
+- **`src/train_classifier.py`**: trains a Random Forest on the
+  extracted features (excluding free-text fields) and saves it to `models/classifier.joblib`. Reports accuracy **against a naive majority-class baseline**. `analyze_kit.py` loads the model automatically if present,
+  as a second opinion.
+
+```bash
+python3 cluster_kits.py
+python3 train_classifier.py
+python3 analyze_kit.py /path/to/a/kit
+```
