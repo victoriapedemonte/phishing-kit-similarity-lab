@@ -8,16 +8,7 @@ almost identical features (e.g. same backdoor, same antibot).
 compute_similarity.py combines both signals.
 """
 
-
-def _flatten(d, prefix=""):
-    flat = {}
-    for key, value in d.items():
-        full_key = f"{prefix}{key}"
-        if isinstance(value, dict):
-            flat.update(_flatten(value, prefix=f"{full_key}."))
-        else:
-            flat[full_key] = value
-    return flat
+from corpus_utils import flatten_features
 
 
 def _compare_value(a, b):
@@ -44,8 +35,8 @@ def feature_similarity(features_a, features_b, ignore_keys=None):
     legitimate copies of the same kit, such as exfil destination.
     """
     ignore_keys = ignore_keys or set()
-    flat_a = _flatten(features_a)
-    flat_b = _flatten(features_b)
+    flat_a = flatten_features(features_a)
+    flat_b = flatten_features(features_b)
     keys = (set(flat_a) | set(flat_b)) - ignore_keys
     if not keys:
         return 0.0

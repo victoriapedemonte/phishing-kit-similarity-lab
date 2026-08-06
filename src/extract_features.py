@@ -16,24 +16,8 @@ import csv
 import json
 import os
 
-from corpus_utils import DATASETS_ROOT, collect_kits, discover_dataset_dirs
+from corpus_utils import DATASETS_ROOT, collect_kits, discover_dataset_dirs, flatten_features
 from feature_extraction.features import extract_all_features
-
-
-def flatten(d, prefix=""):
-    """
-    Flattens a nested dict into a single-level dict with dotted keys.
-    """
-    flat = {}
-    for key, value in d.items():
-        full_key = f"{prefix}{key}"
-        if isinstance(value, dict):
-            flat.update(flatten(value, prefix=f"{full_key}."))
-        elif isinstance(value, list):
-            flat[full_key] = ";".join(str(v) for v in value)
-        else:
-            flat[full_key] = value
-    return flat
 
 
 def write_output(dataset_dir, all_features):
@@ -44,7 +28,9 @@ def write_output(dataset_dir, all_features):
     rows, columns = [], set()
     for kit_id, feats in all_features.items():
         row = {"kit_id": kit_id}
-        row.update(flatten(feats))
+        flat = flatten_features(feats)
+        for k, v in flat.items():
+            row[k] = ";".join(str(x) for x in v) if isinstance(v, list) else v
         rows.append(row)
         columns.update(row.keys())
 

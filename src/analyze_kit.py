@@ -4,8 +4,10 @@ analyze_kit.py
 Analyzes a suspicious kit (any folder on disk) against the reference corpus
 already built and labeled, and answers:
     - Which family does it most resemble?
-    - Is it probably malicious, or more like the bening reference?
+    - Is it probably malicious, or more like the bening reference? 
+        And which signals support that?
     - Who are its closest neighbors, and with what score?
+    - If there's a trained classifier, what does it predict?
 
 Use:
     cd src
@@ -13,15 +15,55 @@ Use:
 """
 
 import argparse
+import os
 import sys
 
-from corpus_utils import collect_kits, discover_dataset_dirs, load_ground_truth, load_kit_files
+import joblib
+
+from corpus_utils import ROOT_DIR, collect_kits, discover_dataset_dirs, flatten_features, load_ground_truth, load_kit_files
 from feature_extraction.features import extract_all_features
 from similarity.feature_similarity import feature_similarity
 from similarity.fuzzy_hash import compare_fingerprints, compute_kit_fingerprint, kit_blob
 
 TOP_N = 5
 NOISY_FEATURE_KEYS = {"exfil_indicators.config_placeholder_values"}
+MODEL_PATH = os.path.join(ROOT_DIR, "models", "classifier.joblib")
+
+SUSPICIOUS_INDICATORS = [
+    ("exfil_indicators.is_external_action", True,
+     "The form sends data to an external domain"),
+    ("exfil_indicators.has_fixed_backdoor_pattern", True,
+     "There's a second fixed exfil destination, besides the configurable one"),
+    ("exfil_indicators.has_empty_or_blank_action", True,
+     "The destination of the form is empty or 'about:blank'"),
+    ("file_manifest.has_config_engine_split", True,
+     "Separates 'config' and 'engine' in different files"),
+    ("evasion_indicators.has_antibot_folder", True,
+     "Has an antibot/ folder"),
+    ("evasion_indicators.has_htaccess", True,
+     "Has a .htaccess file"),
+    ("link_indicators.has_navigation_links", False,
+     "Has no navigation links, typical of a standalone page"),
+    ("obfuscation_indicators.has_base64_blob", True,
+     "Contains a base64 blob (possible obfuscation)"),
+]
+
+
+def explain(features):
+    """For traceability, returns a list of human-readable lines explaining
+    which suspicious indicators are present in the kit."""
+    flat = flatten_features(features)
+    lines = []
+    for key, trigger_value, description in SUSPICIOUS_INDICATORS:
+        present = flat.get(key) == trigger_value
+        lines.append(f"  [{'x' if present else ' '}] {description}")
+    return lines
+
+
+def load_classifier():
+    if not os.path.exists(MODEL_PATH):
+        return None
+    return joblib.load(MODEL_PATH)
 
 
 def build_reference_corpus():
@@ -57,7 +99,7 @@ def analyze(kit_path):
     for kit_id, entry in corpus.items():
         ref_blob_engine = kit_blob(entry["files"], exclude_logical_names={"config.php"})
         if ref_blob_engine == query_blob_engine:
-            continue 
+            continue
 
         engine_scores = compare_fingerprints(
             query_fp_engine, compute_kit_fingerprint(ref_blob_engine)
@@ -75,6 +117,7 @@ def analyze(kit_path):
         })
 
     results.sort(key=lambda r: r["combined_score"], reverse=True)
+
 
     print(f"\n=== Analysis of: {kit_path} ===\n")
     print(f"Found files: {sorted(query_files.keys())}\n")
@@ -104,7 +147,23 @@ def analyze(kit_path):
     ben_str = f"{avg_benign:.3f}" if avg_benign is not None else "no data"
     print(f"  average similarity to malicious references: {mal_str}")
     print(f"  average similarity to benign references:    {ben_str}")
-    print(f"\n(Reference corpus: {len(corpus)} kits.")
+
+    print(f"\nSignas detected in this kit:")
+    for line in explain(query_features):
+        print(line)
+
+    classifier_bundle = load_classifier()
+    if classifier_bundle:
+        from train_classifier import to_vector
+        vector = [to_vector(query_features)]
+        model = classifier_bundle["model"]
+        proba = model.predict_proba(vector)[0] #proba[1] = malicious probability
+        print(f"\nTrained classifier says:")
+        print(f"Malicious probability: {proba[1]:.2f}")
+    else:
+        print(f"\nNo trained classifier yet: run train_classifier.py for a second opinion.")
+
+    print(f"\nReference corpus: {len(corpus)} kits.")
     print(" The veredict is as good as the reference (see README).")
 
 

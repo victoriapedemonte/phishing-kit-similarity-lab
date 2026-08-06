@@ -64,3 +64,17 @@ def collect_kits(dataset_dir):
             if files:
                 kits[f"{family}/{kit_id}"] = files
     return kits
+
+
+def flatten_features(d, prefix=""):
+    """
+    Flattens a nested dict into a single-level dict with dotted keys.
+    """
+    flat = {}
+    for key, value in d.items():
+        full_key = f"{prefix}{key}"
+        if isinstance(value, dict):
+            flat.update(flatten_features(value, prefix=f"{full_key}."))
+        else:
+            flat[full_key] = value
+    return flat
