@@ -1,0 +1,1 @@
+"""Similarity module: fuzzy hashing + feature similarity."""

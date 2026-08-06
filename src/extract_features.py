@@ -16,44 +16,13 @@ import csv
 import json
 import os
 
+from corpus_utils import DATASETS_ROOT, collect_kits, discover_dataset_dirs
 from feature_extraction.features import extract_all_features
-
-SRC_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR = os.path.dirname(SRC_DIR)
-DATASETS_ROOT = os.path.join(ROOT_DIR, "datasets")
-SKIP_SUBDIRS = {"seeds"}
-IGNORED_FILENAMES = {".DS_Store", "Thumbs.db", "desktop.ini"}
-
-
-def discover_dataset_dirs():
-    if not os.path.isdir(DATASETS_ROOT):
-        return []
-    return [
-        os.path.join(DATASETS_ROOT, name)
-        for name in sorted(os.listdir(DATASETS_ROOT))
-        if os.path.isdir(os.path.join(DATASETS_ROOT, name))
-    ]
-
-
-def load_kit_files(kit_dir):
-    files = {}
-    for root, _dirs, filenames in os.walk(kit_dir):
-        for fname in sorted(filenames):
-            if fname in IGNORED_FILENAMES:
-                continue
-            full_path = os.path.join(root, fname)
-            rel_path = os.path.relpath(full_path, kit_dir).replace(os.sep, "/")
-            try:
-                with open(full_path, "r", encoding="utf-8") as f:
-                    files[rel_path] = f.read()
-            except UnicodeDecodeError:
-                print(f"  (omitido, no es texto UTF-8: {rel_path})")
-    return files
 
 
 def flatten(d, prefix=""):
     """
-    It flattens a nested dictionary into a single level dict with dot-separated keys.
+    Flattens a nested dict into a single-level dict with dotted keys.
     """
     flat = {}
     for key, value in d.items():
@@ -65,21 +34,6 @@ def flatten(d, prefix=""):
         else:
             flat[full_key] = value
     return flat
-
-
-def extract_features_for_dataset(dataset_dir):
-    all_features = {}
-    for family in sorted(os.listdir(dataset_dir)):
-        family_dir = os.path.join(dataset_dir, family)
-        if not os.path.isdir(family_dir) or family in SKIP_SUBDIRS:
-            continue
-        for kit_id in sorted(os.listdir(family_dir)):
-            kit_dir = os.path.join(family_dir, kit_id)
-            if not os.path.isdir(kit_dir):
-                continue
-            files = load_kit_files(kit_dir)
-            all_features[f"{family}/{kit_id}"] = extract_all_features(files)
-    return all_features
 
 
 def write_output(dataset_dir, all_features):
@@ -110,9 +64,10 @@ def main():
         return
 
     for dataset_dir in dataset_dirs:
-        all_features = extract_features_for_dataset(dataset_dir)
-        if not all_features:
+        kits = collect_kits(dataset_dir)
+        if not kits:
             continue
+        all_features = {kid: extract_all_features(files) for kid, files in kits.items()}
         features_path, csv_path = write_output(dataset_dir, all_features)
         source_name = os.path.basename(dataset_dir)
         print(f"[{source_name}] Features extracted from {len(all_features)} kits.")

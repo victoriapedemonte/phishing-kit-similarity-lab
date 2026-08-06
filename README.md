@@ -49,11 +49,11 @@ Three families are generated:
 
 Two design choices worth calling out:
 
-- **Config vs. engine split** — `config.php.txt` (the fake exfil
+- **Config vs. engine split**: `config.php.txt` (the fake exfil
   destination) and `process.php.txt` (the validation "engine") are
   separate files, because in real kits the config is what changes
   between resold copies while the engine stays nearly identical.
-- **`rebrand`** — swaps the visible brand name for a different
+- **`rebrand`**: swaps the visible brand name for a different
   fictional one while keeping the underlying form/JS/CSS structure.
   This is the key test case for the whole project: visual/brand
   matching would call these "different sites," but code-similarity
@@ -61,8 +61,6 @@ Two design choices worth calling out:
 
 Every generated kit is tracked in `datasets/synthetic/ground_truth.csv`
 and `detailed_manifest.json`, so later phases can be objectively scored.
-
-## Running it
 
 ```bash
 cd src
@@ -78,13 +76,13 @@ This (re)generates everything under `datasets/synthetic/<family>/`
 We turn each generated kit into a structured `features.json`
 fingerprint, using the same categories mapped in the table above:
 
-- **`src/feature_extraction/features.py`** — parses each kit
+- **`src/feature_extraction/features.py`**: parses each kit
   (BeautifulSoup for HTML, regex for the rest) and extracts 6 feature
   groups: file manifest, form fields, exfiltration indicators
   (including detecting a fixed/hidden destination alongside the
   randomized one, a real backdoor pattern), obfuscation indicators,
   evasion indicators, and branding/signature.
-- **`src/extract_features.py`** — runs the extractor over every kit in
+- **`src/extract_features.py`**: runs the extractor over every kit in
   `datasets/synthetic/` and writes `features.json` (nested, for code)
   and `features_summary.csv` (flattened, for spreadsheets).
 
@@ -93,3 +91,29 @@ pip install -r requirements.txt
 cd src
 python3 extract_features.py
 ```
+
+## Similarity & Querying
+
+Two complementary tools:
+
+- **`src/compute_similarity.py`**: builds/validates the reference
+  corpus: computes pairwise similarity between every kit in
+  `datasets/`, combining an ensemble of ssdeep + TLSH + a
+  dependency-free shingling method (code-level) with the previous
+  feature similarity (semantic-level). Writes `similarity_matrix.csv`
+  and, when ground truth is available, reports how well the combined
+  score separates same-family from unrelated pairs.
+- **`src/analyze_kit.py`**: the actual entry point for analyzing a
+  new, unlabeled kit: takes any folder on disk, compares it against
+  the labeled reference corpus, and reports its nearest neighbors,
+  most likely family, and a malicious/benign verdict.
+
+```bash
+pip install -r requirements.txt   # macOS: brew install ssdeep first
+cd src
+python3 compute_similarity.py            # validates the corpus
+python3 analyze_kit.py /path/to/a/kit    # analyzes one new kit
+```
+**A note on the verdict:** it's nearest-neighbor based, not a trained
+classifier, and only as good as the reference corpus. 
+
