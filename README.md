@@ -121,6 +121,15 @@ python3 extract_features.py
 
 ## Similarity & Querying
 
+![Similarity graph of the synthetic corpus](datasets/synthetic/similarity_graph.png)
+
+*Each node is a kit, colored by its ground-truth family; an edge means
+combined similarity ≥ 0.6. `family_alpha` and `family_gamma` end up in
+the same connected cluster, since gamma **is** alpha, heavily mutated. `family_beta` is fully separate. `family_benign` has no edges at all. 
+Generate this yourself: `python3 build_similarity_graph.py`.*
+
+Two complementary tools build the numbers behind that graph:
+
 - **`src/compute_similarity.py`**: validates the reference corpus:
   computes pairwise similarity between every kit, combining an
   ssdeep + TLSH + a dependency-free shingling method (code-level)
